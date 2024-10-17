@@ -1,0 +1,96 @@
+.contact-container {
+    max-width: 600px;
+    width: 90%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+}
+
+.contact-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-container label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.contact-container input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.contact-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-container input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-container input[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+.contact-container textarea {
+    height: 100px;
+    resize: none;
+}
+
+
+.submission-status {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+
+
+@media (max-width: 480px) {
+    .contact-container {
+      max-width: 95%;
+      margin: 15px auto;
+    }
+    .contact-container input, .contact-container textarea {
+      padding: 6px;
+      margin-bottom: 6px;
+    }
+    .contact-container label {
+      font-size: 14px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .contact-container {
+      max-width: 800px; 
+    }
+  }
+  
+ 
+  @media (min-width: 1600px) {
+    .contact-container {
+      max-width: 1000px; 
+  }
+}

@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1d2325;
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  flex-wrap: wrap; /* Agregamos flex-wrap para que los elementos se adapten a la pantalla */
+}
+
+/* -----CONTACT INFO */
+
+.contact-info {
+  flex: 1;
+  padding: 20px 20px;
+  width: 100%; /* Cambiamos el ancho a 100% para que se adapte a la pantalla */
+  max-width: 250px;
+}
+
+.contact-info h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.contact-info p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+/* -----COPYRIGHT */
+
+.copyright {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 20px 20px;
+  width: 100%; /* Cambiamos el ancho a 100% para que se adapte a la pantalla */
+  max-width: 300px;
+}
+
+/* -----SOCIAL MEDIA */
+
+.social-media {
+  flex: 1;
+  padding: 20px 20px;
+  width: 100%; /* Cambiamos el ancho a 100% para que se adapte a la pantalla */
+  max-width: 250px;
+}
+
+.social-media a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.social-media .icons {
+  margin-right: 10px;
+}
+
+/* Media queries */
+
+@media (min-width: 320px) and (max-width: 768px) {
+  footer {
+    flex-direction: column; /* Cambiamos la dirección del flexbox a columna para pantallas pequeñas */
+  }
+  .contact-info, .copyright, .social-media {
+    margin-bottom: 20px; /* Agregamos un margen inferior para separar los elementos */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  footer {
+    flex-direction: row; /* Cambiamos la dirección del flexbox a fila para pantallas medianas */
+  }
+  .contact-info, .copyright, .social-media {
+    flex-basis: 33.33%; /* Asignamos un ancho base para cada elemento */
+  }
+}
+
+@media (min-width: 1201px) {
+  footer {
+    flex-direction: row; /* Cambiamos la dirección del flexbox a fila para pantallas grandes */
+  }
+  .contact-info, .copyright, .social-media {
+    flex-basis: 25%; /* Asignamos un ancho base para cada elemento */
+  }
+}
+/* --------------- */
