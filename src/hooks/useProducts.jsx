@@ -5,26 +5,27 @@ const useProducts = () => {
     const [isLoading, setIsLoading] = useState(true)
     const [products, setProducts] = useState(null)
 
-
-    const getProducts = async () => {
-        const productos = await solicitarProductos()
-        setIsLoading(false)
-        setProducts(productos)
-    }
-    
     useEffect(() => {
-        setTimeout(() => {
+        const getProducts = async () => {
+            try {
+                const productos = await solicitarProductos()
+                setProducts(productos)
+            } catch (error) {
+                console.error("Error fetching products:", error)
+            } finally {
+                setIsLoading(false)
+            }
+        }
+
+        const timer = setTimeout(() => {
             getProducts()
         }, 3000)
 
+        return () => clearTimeout(timer) // Limpia el timeout si el componente se desmonta
+
     }, [])
 
-
-    return {
-        isLoading: isLoading,
-        products: products
-    }
+    return { isLoading, products }
 }
-
 
 export default useProducts
