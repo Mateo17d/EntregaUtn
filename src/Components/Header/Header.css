@@ -33,7 +33,7 @@ header {
 .nav-list {
     list-style-type: none;
     display: flex;
-    gap: 1rem;
+    gap: 30px;
 }
 
 .nav-list li a {
@@ -96,6 +96,7 @@ header {
     .nav.visible {
         opacity: 1;
         visibility: visible;
+        z-index: 100;
     }
     
     .nav-list {
