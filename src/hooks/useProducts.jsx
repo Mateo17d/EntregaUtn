@@ -8,7 +8,7 @@ const useProducts = () => {
     useEffect(() => {
         const getProducts = async () => {
             try {
-                const productos = solicitarProductos()
+                const productos = await solicitarProductos()
                 setProducts(productos)
             } catch (error) {
                 console.error("Error fetching products:", error)
