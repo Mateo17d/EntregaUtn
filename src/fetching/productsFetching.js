@@ -1,34 +1,33 @@
+const getApiUrl = () => {
+    // Verifica si estamos en desarrollo o producción
+    return process.env.NODE_ENV === 'development' 
+        ? 'http://localhost:5173/data/products.json'
+        : '/data/products.json';
+}
 
 const solicitarProductos = async () => {
-    const URL_API_PRODUCTS = 'http://localhost:5173/data/products.json'
+    const URL_API_PRODUCTS = getApiUrl();
 
-    const respuestaHttp = await fetch(URL_API_PRODUCTS,
-        {
-            method: 'GET'
-        }
-    )
-    const resultado = await respuestaHttp.json()
-    return resultado
+    const respuestaHttp = await fetch(URL_API_PRODUCTS, {
+        method: 'GET'
+    });
+    const resultado = await respuestaHttp.json();
+    return resultado;
 }
-
 
 export const obtenerProductoPorId = async (id) => {
-    const URL_API_PRODUCTS = 'http://localhost:5173/data/products.json'
+    const URL_API_PRODUCTS = getApiUrl();
 
-    const respuestaHttp = await fetch(URL_API_PRODUCTS,
-        {
-            method: 'GET'
-        }
-    )
-    const productos = await respuestaHttp.json()
+    const respuestaHttp = await fetch(URL_API_PRODUCTS, {
+        method: 'GET'
+    });
+    const productos = await respuestaHttp.json();
 
     const productoEncontrado = productos.find((producto) => {
-        return producto.id === id
+        return producto.id === id;
     });
-    console.log(productoEncontrado)
-    return productoEncontrado
+    console.log(productoEncontrado);
+    return productoEncontrado;
 }
 
-
-
-export default solicitarProductos
+export default solicitarProductos;
