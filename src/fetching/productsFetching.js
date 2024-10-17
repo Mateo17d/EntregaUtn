@@ -1,5 +1,4 @@
 const getApiUrl = () => {
-    // Verifica si estamos en desarrollo o producción
     return process.env.NODE_ENV === 'development' 
         ? 'http://localhost:5173/data/products.json'
         : '/data/products.json';
