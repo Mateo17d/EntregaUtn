@@ -1,8 +1,7 @@
-
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
-export default {
-  build: {
-    target: 'esnext' // or specify a more recent version of a browser
-  }
-}
+export default defineConfig({
+  plugins: [react()],
+})
